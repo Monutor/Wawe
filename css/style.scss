@@ -23,9 +23,12 @@
   --fz14px: 14px;
 
   //rem font-size
+  --fz18px: 1.3rem;
   --fz24px: 1.7rem;
   --fz36px: 2.6rem;
+  --fz40px: 2.8rem;
   --fz48px: 3.5rem;
+  --fz64px: 4.5rem;
   --fz200px: 14rem;
 }
 
@@ -65,9 +68,11 @@
   padding: 23px 91px;
   font-size: var(--fz24px);
   line-height: 1;
+  font-weight: 400;
   border: 1px solid #C4C4C4;
   text-transform: uppercase;
   transition: background-color 0.2s, color 0.2s;
+
   &:hover {
     background-color: var(--decor-color);
     color: var(--white);
@@ -101,6 +106,7 @@ body {
   z-index: 50;
   background-color: transparent;
   transition: background-color 0.2s;
+
   &--bg {
     background-color: var(--decor-color);
   }
@@ -129,6 +135,7 @@ body {
       color: var(--white);
       font-weight: 400;
       position: relative;
+
       &::after {
         content: '';
         position: absolute;
@@ -138,6 +145,7 @@ body {
         border-bottom: 1px solid var(--white);
         transition: width 0.2s;
       }
+
       &:hover::after {
         width: 100%;
       }
@@ -150,6 +158,7 @@ body {
   background-size: cover;
   background-position: center center;
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -193,6 +202,7 @@ body {
     height: 69px;
     margin-bottom: 92px;
     transition: transform 0.2s;
+
     &:hover {
       transform: translateY(-10px);
     }
@@ -207,15 +217,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     p {
       max-width: 44.5%;
-      
+
       &:not(:last-child) {
         margin-bottom: 30px;
-        
+
       }
     }
-    
+
   }
 
 }
@@ -277,6 +288,7 @@ body {
 
   &__box {
     position: relative;
+
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -311,18 +323,20 @@ body {
 
   &__content {
     max-width: 600px;
+
     p {
       &:not(:last-child) {
         margin-bottom: 30px;
       }
     }
   }
-  
+
 }
 
 .tops {
   position: relative;
   margin-bottom: 200px;
+
   &__bg {
     background-repeat: no-repeat;
     background-position: center center;
@@ -346,6 +360,7 @@ body {
 
   &__text {
     max-width: 507px;
+
     p {
       &:not(:last-child) {
         margin-bottom: 30px;
@@ -356,6 +371,7 @@ body {
 
 .gallery {
   padding-bottom: 200px;
+
   &__title {
     margin-bottom: 212px;
   }
@@ -378,6 +394,7 @@ body {
     font-weight: 400;
     transition: color 0.2s;
     cursor: pointer;
+
     &:hover {
       color: var(--decor-color);
     }
@@ -391,7 +408,9 @@ body {
   }
 
   &__item {
-    &:first-child, &:last-child {
+
+    &:first-child,
+    &:last-child {
       grid-column: 2 span;
     }
   }
@@ -400,6 +419,7 @@ body {
     display: block;
     height: 100%;
     position: relative;
+
     img {
       width: 100%;
       height: 100%;
@@ -424,5 +444,73 @@ body {
 
   &__more {
     margin: 0 auto;
+    margin-bottom: 200px;
+  }
+
+  .blockquote {
+    background-color: var(--bg-color);
+    padding: 80px 0;
+    text-align: center;
+    font-size: var(--fz40px);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 200px;
+
+    &__inner {
+      max-width: 895px;
+      margin: 0 auto;
+    }
+
+    &__author {
+      display: block;
+      font-size: var(--fz14px);
+      text-align: end;
+    }
+  }
+
+  .promo {
+    margin: 0 auto 200px;
+    max-width: 1200px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &__link {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:hover {
+        .promo__play path{
+          fill: var(--decor-color);
+        }
+      }
+    }
+
+    &__play path {
+      transition: fill 0.2s;
+    }
+  }
+
+  .statistics {
+    display: flex;
+    justify-content: center;
+    
+    &__item {
+      text-align: center;
+      font-size: var(--fz64px);
+      line-height: 1.1;
+      font-weight: 700;
+      &:not(:last-child) {
+        margin-right: 100px;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: 400;
+        display: block;
+      }
+    }
   }
 }

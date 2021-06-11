@@ -76,3 +76,11 @@ address {
 h1, h2, h3 {
   font-weight: normal;
 }
+
+a, button, input, textarea {
+  outline: transparent;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+  border: 1px solid #00B2A0;
+}

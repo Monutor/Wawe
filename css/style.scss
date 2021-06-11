@@ -3,7 +3,6 @@
 @import url(vendor/normalize.css);
 
 
-
 //=====================================
 
 
@@ -17,6 +16,7 @@
   --bg-color: #F8F8F8;
   --hero-title: #0D302C;
   --black: #000;
+  --border: #DADADA;
 
   //font-size
   //base font-size
@@ -65,6 +65,7 @@
   cursor: pointer;
   display: block;
   max-width: 350px;
+  width: 100%;
   padding: 23px 91px;
   font-size: var(--fz24px);
   line-height: 1;
@@ -512,5 +513,269 @@ body {
         display: block;
       }
     }
+  }
+}
+
+.blog-slider {
+  margin-bottom: 200px;
+
+  &__title {
+    margin-bottom: 230px;
+  }
+
+  &__container {
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+
+  &__inner {
+    height: 42vw;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    color: var(--white);
+    max-width: 600px;
+  }
+
+  &__heading {
+    font-size: var(--fz48px);
+    line-height: 1.2;
+  }
+
+  &__dots {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 77px;
+    
+  }
+
+  &__bullet {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover, &--active {
+      background-color: var(--decor-color);
+    } 
+    
+  }
+
+}
+
+.team {
+  padding-bottom: 200px;
+
+  &__title {
+    margin-bottom: 212px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 330px));
+    justify-content: space-between;
+  }
+
+  &__member {
+    text-align: center;
+  }
+
+  &__img {
+    margin-bottom: 25px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: var(--fz18px);
+    line-height: 1;
+  }
+
+  &__position {
+    font-weight: 400;
+  }
+}
+
+.tarrifs {
+  padding: 200px 0;
+  background-color: var(--bg-color);
+
+  &__title {
+    margin-bottom: 180px;
+  }
+
+  &__catalog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 360px));
+    justify-content: space-between;
+  }
+
+  &__column {
+    padding: 45px 31px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__name {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    flex-grow: 1;
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    font-weight: 400;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__price, &__name {
+    font-size: var(--fz36px);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  &__price {
+    span {
+      font-size: var(--fz18px);
+      line-height: 1;
+      vertical-align: middle;
+      padding-left: 5px;
+    }
+  }
+}
+
+.request {
+  padding: 130px 0 200px;
+
+  .map {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+  }
+
+  .request__title {
+    margin-bottom: 212px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 210px;
+  }
+
+  .form {
+    max-width: 570px;
+    width: 100%;
+    &__input {
+      width: 100%;
+      border-bottom: 2px solid var(--border);
+      height: 38px;
+      padding: 0 5px;
+      padding-bottom: 20px;
+      &::placeholder{
+        max-width: 260px;
+        font-size: var(--fz18px);
+        font-weight: 400;
+        line-height: 1;
+        color: var(--decor-color);
+      }
+    }
+
+    &__name {
+      margin-bottom: 32px;
+    }
+
+    &__tel {
+      margin-bottom: 53px;
+    }
+
+    &__message {
+      resize: none;
+      height: 156px;
+      margin-bottom: 75px;
+    }
+  }
+
+  &__contacts {
+    background-color: var(--bg-color);
+    max-width: 600px;
+    width: 100%;
+    padding: 60px 52px;
+    font-weight: 400;
+    font-size: var(--fz24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__address {
+    display: block;
+    max-width: 320px;
+  }
+
+  &__address, &__tel {
+    transition: color 0.2s;
+    &:hover {
+      color: var(--decor-color);
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+
+    &__list {
+      &:not(:last-child){
+        margin-right: 10px;
+      }
+    }
+
+    &__link {
+      font-size: var(--fz24px);
+      font-weight: 400;
+      line-height: 1;
+      transition: color 0.2s;
+      &:hover{
+        color: var(--decor-color);
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 68px 0;
+  background-color: var(--decor-color);
+  display: flex;
+  &__logo {
+    margin: auto;
   }
 }
